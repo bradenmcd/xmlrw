@@ -27,6 +27,7 @@ endif()
 
 find_package(LibXml2 ${REQUIRE_LIBXML2})
 find_package(Doxygen)
+find_package(Perl)
 
 if(BUILD_USE_STATIC_RUNTIME)
     foreach(LANG_TAG C CXX)
