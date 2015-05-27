@@ -38,6 +38,14 @@ if(BUILD_USE_STATIC_RUNTIME)
     endforeach()
 endif()
 
+if(MSVC)
+    foreach(LANG C CXX)
+        foreach(CONFIG DEBUG RELWITHDEBINFO)
+            string(REPLACE "/Zi" "/Z7" CMAKE_${LANG}_FLAGS_${CONFIG} "${CMAKE_${LANG}_FLAGS_${CONFIG}}")
+        endforeach()
+    endforeach()
+endif()
+
 if(WIN32)
     set(XMLRW_WIN32_WINNT 0x500 CACHE STRING "Minimum supported Windows version")
     add_definitions(
