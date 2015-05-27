@@ -18,7 +18,13 @@ set(CMAKE_CXX_STANDARD 11)
 
 option(BUILD_USE_STATIC_RUNTIME "Use the static runtime library on Windows"
        OFF)
-option(BUILD_WITH_XMLLITE "Use XmlLite (Windows XP SP2+)" OFF)
+if(WIN32)
+    set(BUILD_WITH_XMLLITE_DEFAULT ON)
+else()
+    set(BUILD_WITH_XMLLITE_DEFAULT OFF)
+endif()
+option(BUILD_WITH_XMLLITE "Use XmlLite (Windows XP SP2+)"
+       ${BUILD_WITH_XMLLITE_DEFAULT})
 
 if(NOT BUILD_WITH_XMLLITE)
     set(REQUIRE_LIBXML2 REQUIRED)
