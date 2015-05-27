@@ -26,6 +26,7 @@ if(NOT BUILD_WITH_XMLLITE)
 endif()
 
 find_package(LibXml2 ${REQUIRE_LIBXML2})
+find_package(Doxygen)
 
 if(BUILD_USE_STATIC_RUNTIME)
     foreach(LANG_TAG C CXX)
