@@ -16,7 +16,6 @@ include(CPack)
 
 set(CMAKE_CXX_STANDARD 11)
 
-option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 option(BUILD_USE_STATIC_RUNTIME "Use the static runtime library on Windows"
        OFF)
 option(BUILD_WITH_XMLLITE "Use XmlLite (Windows XP SP2+)" OFF)

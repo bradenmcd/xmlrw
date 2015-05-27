@@ -24,7 +24,7 @@ if(BUILD_WITH_XMLLITE)
     )
 endif()
 
-add_library(xmlrw ${HEADERS} ${SOURCES})
+add_library(xmlrw STATIC ${HEADERS} ${SOURCES})
 
 if(BUILD_WITH_XMLLITE)
     target_compile_definitions(xmlrw PRIVATE HAVE_XMLLITE)
@@ -35,8 +35,6 @@ endif()
 
 install(
     TARGETS xmlrw
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
