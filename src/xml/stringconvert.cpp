@@ -41,7 +41,7 @@
  *
  * @brief Convert a UTF-8 string to a UTF-16 string.
  *
- * Ordinarily it would make more sense to us a `std::u16string` to hold a UTF-16
+ * Ordinarily it would make more sense to use a `std::u16string` to hold a UTF-16
  * string; however, the Windows APIs are all `wchar_t`-based (and this function
  * is only used with the XmlLite backend).
  *
